@@ -42,7 +42,7 @@ my $series3 = Chart::Clicker::Data::Series->new(
 
 my $ds = Chart::Clicker::Data::DataSet->new(series => [ $series1, $series2, $series3 ]);
 
-$cc->title->text('Line + Shapes');
+$cc->title->text('Line + Shapes (Brushed)');
 $cc->add_to_datasets($ds);
 
 my $defctx = $cc->get_context('default');
@@ -55,7 +55,13 @@ $defctx->renderer->shape(
        radius => 5,
     })
 );
+$defctx->renderer->shape_brush(
+    Graphics::Primitive::Brush->new(
+        width => 2,
+        color => Graphics::Color::RGB->new(red => 1, green => 1, blue => 1)
+    )
+);
 
 $defctx->renderer->brush->width(2);
 
-$cc->write_output('line-shapes.png');
+$cc->write_output('line-shapes-brushed.png');
