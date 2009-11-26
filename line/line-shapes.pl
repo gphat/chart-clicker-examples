@@ -40,10 +40,9 @@ my $series3 = Chart::Clicker::Data::Series->new(
 );
 
 
-$cc->border->width(0);
-
 my $ds = Chart::Clicker::Data::DataSet->new(series => [ $series1, $series2, $series3 ]);
 
+$cc->title->text('Line + Shapes');
 $cc->add_to_datasets($ds);
 
 my $defctx = $cc->get_context('default');
