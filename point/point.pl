@@ -40,6 +40,8 @@ my $series3 = Chart::Clicker::Data::Series->new(
     values  => \@bw3,
 );
 
+$cc->title->text('Point');
+$cc->title->padding->bottom(5);
 
 my $ds = Chart::Clicker::Data::DataSet->new(series => [ $series1, $series2, $series3 ]);
 

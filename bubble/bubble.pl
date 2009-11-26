@@ -43,6 +43,9 @@ my $series3 = Chart::Clicker::Data::Series::Size->new(
     sizes    => [qw(2 5 3 1 8 9 2 1 1 4 2 5)]
 );
 
+$cc->title->text('Bubble');
+$cc->title->padding->bottom(5);
+
 my $ds = Chart::Clicker::Data::DataSet->new(series => [ $series1, $series2, $series3 ]);
 
 $cc->add_to_datasets($ds);
