@@ -39,7 +39,8 @@ my $series3 = Chart::Clicker::Data::Series->new(
     values  => \@bw3,
 );
 
-$cc->title->text('Bar');
+
+$cc->title->text('Bar (Baseline)');
 $cc->title->padding->bottom(5);
 
 my $ds = Chart::Clicker::Data::DataSet->new(series => [ $series1, $series2, $series3 ]);
@@ -50,9 +51,13 @@ my $def = $cc->get_context('default');
 
 my $area = Chart::Clicker::Renderer::Bar->new(opacity => .6);
 $area->brush->width(3);
+
 $def->renderer($area);
 $def->range_axis->tick_values([qw(1 3 5)]);
 $def->range_axis->format('%d');
+
+$def->range_axis->baseline(3);
+
 $def->domain_axis->tick_values([qw(2 4 6 8 10)]);
 $def->domain_axis->format('%d');
 
@@ -61,4 +66,4 @@ $def->domain_axis->format('%d');
 $def->domain_axis->fudge_amount(.05);
 $def->range_axis->fudge_amount(.01);
 
-$cc->write_output('bar.png');
+$cc->write_output('bar-baseline.png');
