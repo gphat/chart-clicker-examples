@@ -10,7 +10,7 @@ use Chart::Clicker::Renderer::PolarArea;
 use Geometry::Primitive::Rectangle;
 use Graphics::Color::RGB;
 
-my $cc = Chart::Clicker->new(width => 500, height => 400);
+my $cc = Chart::Clicker->new(width => 500, height => 250);
 
 my $series1 = Chart::Clicker::Data::Series->new(
     keys    => [ 1, 2,  3, 4, 5, 6, 7, 8,  9, 10 ],
@@ -47,4 +47,4 @@ $defctx->domain_axis->hidden(1);
 $defctx->range_axis->hidden(1);
 $cc->plot->grid->visible(0);
 
-$cc->write_output('foo.png');
+$cc->write_output('polararea.png');
