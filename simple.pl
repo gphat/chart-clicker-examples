@@ -10,7 +10,7 @@ use Geometry::Primitive::Rectangle;
 use Graphics::Color::RGB;
 use Geometry::Primitive::Circle;
 
-my $cc = Chart::Clicker->new(width => 500, height => 250, format => 'pdf');
+my $cc = Chart::Clicker->new(width => 500, height => 250, format => 'png');
 
 my @hours = qw(
     1 2 3 4 5 6 7 8 9 10 11 12
@@ -91,4 +91,4 @@ $defctx->renderer->brush->width(2);
 $cc->legend->font->family('Hoefler Text');
 
 $cc->draw;
-$cc->write('foo.pdf');
+$cc->write('simple.png');
