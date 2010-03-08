@@ -36,7 +36,7 @@ $cc->add_to_datasets($ds);
 
 my $defctx = $cc->get_context('default');
 my $ren = Chart::Clicker::Renderer::Pie->new;
-$ren->border_color(Graphics::Color::RGB->new(red => 0, green => 0, blue => 0));
+$ren->border_color(Graphics::Color::RGB->new(red => 1, green => 1, blue => 1));
 $ren->brush->width(2);
 $ren->gradient_color(Graphics::Color::RGB->new(red => 1, green => 1, blue => 1, alpha => .3));
 $defctx->renderer($ren);
