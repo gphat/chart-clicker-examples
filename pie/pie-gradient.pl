@@ -39,9 +39,10 @@ my $ren = Chart::Clicker::Renderer::Pie->new;
 $ren->border_color(Graphics::Color::RGB->new(red => 1, green => 1, blue => 1));
 $ren->brush->width(2);
 $ren->gradient_color(Graphics::Color::RGB->new(red => 1, green => 1, blue => 1, alpha => .3));
+$ren->gradient_reverse(1);
 $defctx->renderer($ren);
 $defctx->domain_axis->hidden(1);
 $defctx->range_axis->hidden(1);
 $cc->plot->grid->visible(0);
 
-$cc->write_output('foo.png');
+$cc->write_output('pie-gradient.png');
